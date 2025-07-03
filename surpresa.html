@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surpresa Especial</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #1e1e2f, #2e2e3f);
+      font-family: 'Segoe UI', sans-serif;
+      color: #f0f0f0;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #00bcd4;
+      margin-bottom: 30px;
+    }
+
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 25px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+
+    .photos img {
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid #00bcd4;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+
+    .photos img:hover {
+      transform: scale(1.05);
+    }
+
+    .gift {
+      width: 180px;
+      cursor: pointer;
+      transition: transform 0.4s;
+      margin: 20px 0;
+    }
+
+    .gift:hover {
+      transform: scale(1.15);
+    }
+
+    .letter {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease;
+      background-color: #29293d;
+      color: #ffffff;
+      border: 2px solid #00bcd4;
+      padding: 25px;
+      margin: 0 auto;
+      max-width: 600px;
+      border-radius: 10px;
+      font-size: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      line-height: 1.6;
+    }
+
+    .letter.visible {
+      display: block;
+      opacity: 1;
+    }
+
+    h2 {
+      color: #00bcd4;
+    }
+
+    .signature {
+      color: #aaa;
+      font-style: italic;
+      margin-top: 20px;
+    }
+   
+      
+
+
+    .flip-card {
+      background-color: transparent;
+      width: 180px;
+      height: 250px;
+      perspective: 1000px;
+      margin: 0 auto;
+}
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+}
+
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+}
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      backface-visibility: hidden;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+    .flip-card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+}
+
+    .flip-card-back {
+      background-color: #263238;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      transform: rotateY(180deg);
+      font-size: 16px;
+      line-height: 1.4;
+      text-align: center;
+} 
+.flip-card.up {
+  margin-top: 0;
+}
+
+.flip-card.down {
+  margin-top: 40px;
+}
+
+
+    .letter {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease;
+      background-color: #29293d;
+      color: #ffffff;
+      border: 2px solid #00bcd4;
+      padding: 25px;
+      margin: 0 auto;
+      max-width: 600px;
+      border-radius: 10px;
+      font-size: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      line-height: 1.6;
+}
+
+    .letter.visible {
+      display: block;
+      opacity: 1;
+}
+
+    .signature {
+      color: #aaa;
+      font-style: italic;
+      margin-top: 20px;
+}
+@media (max-width: 600px) {
+  .photos {
+    grid-template-columns: 1fr; /* 1 cartão por linha */
+    gap: 15px;
+    padding: 0 20px;
+  }
+
+  .flip-card {
+    width: 100%;
+    max-width: 280px;
+    height: 320px;
+    margin: 0 auto;
+  }
+
+  .flip-card-back p {
+    font-size: 15px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <h1> Feliz vida, meu gatinho🎁</h1>
+
+  <audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  Seu navegador não suporta áudio HTML5.
+</audio>
+
+  <div class="photos">
+    <div class="flip-card up" onclick="this.classList.toggle('flipped')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="imagem/c1f829c3-7e41-4775-ba17-4806392a2fc8.jpeg" alt="Foto 1">
+      </div>
+      <div class="flip-card-back">
+        <p>Que sua essência e esse sorriso do pequeno henrick não mude e te acompanhe por onde for!</p><br>
+      </div>
+    </div>
+  </div>
+
+  <!-- Foto 2 -->
+  <div class="flip-card down" onclick="this.classList.toggle('flipped')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="imagem/550288e7-ab9a-4640-ba0c-84b46af96098.jpeg" alt="Foto 2">
+      </div>
+      <div class="flip-card-back">
+        <p>Quantas histórias, fases boas e ruins você enfrentou, meu orgulho . Você é demais!</p><br>
+      </div>
+    </div>
+  </div>
+
+  <!-- Foto 3 -->
+  <div class="flip-card up" onclick="this.classList.toggle('flipped')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="imagem/9eda30a3-bd0e-4dcf-a158-cf1d0bfeb4b7.jpeg" alt="Foto 3">
+      </div>
+      <div class="flip-card-back">
+        <p>Uma trajetória linda, cheia de conquistas e sorrisos.</p><br>
+      </div>
+    </div>
+  </div>
+
+  <!-- Foto 4 -->
+  <div class="flip-card down" onclick="this.classList.toggle('flipped')">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="imagem/ca9b6358-ae91-45d2-9eb5-a858d3adc475.jpeg" alt="Foto 4">
+      </div>
+      <div class="flip-card-back">
+        <p>Parabéns por cada passo dado. O melhor ainda está por vir! E vou estar aqui para comemorar com você.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <h2>👇</h2>
+  <img class="gift" src="imagem/download (3).png" alt="Presente" onclick="showLetter()">
+
+  <div class="letter" id="letter">
+    <h2>💌 Uma mensagem para você</h2>
+    <p>
+      Cada ano vivido moldou quem você é hoje: forte, resiliente, inspirador, um querido.<br>
+      Que esta nova fase da sua vida venha cheia de realizações, sabedoria e alegria verdadeira.<br>
+      Continue avançando, pois seu caminho é único e cheio de propósito.<br>
+      Nunca esqueça o quanto você é forte. 💪<br>
+      Eu sempre digo que cartas escritas a mão são superiores, e são mesmo kkk mas escrevendo aqui ou la<br>
+      não vai mudar o que eu sinto ou o que quero expressar. Fico extremamente feliz em comemorar <br>
+      sua vida de pertinho hoje, e de poder te desejar as coisas mais incriveis da vida, principalmente<br> 
+      a presença de DEUS porque assim sei que nada vai te faltar, peço para que Deus te abençoe sempre,<br>
+      cuide de você e te guie por onde for, que seus planos, projetos e sonhos não sejam apenas<br>
+      uma vontande mas sejam realizações, e sei que um dia você vai alcançar, acredito em você,<br>
+      juizo e sabedoria, e que coisas boas aconteçam como você.<br>
+      Te amooo muito, feliz vida meu bem.❤️❤️❤️
+    </p>
+    <div class="signature">— De alguém que acredita muito em você, seu amor</div>
+  </div>
+  
+
+  <script>
+    function showLetter() {
+      document.getElementById('letter').classList.add('visible');
+    }
+  </script>
+
+</body>
+</html>

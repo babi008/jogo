@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo: Rumo aos 20 Anos</title>
+  <link rel="stylesheet" href="estilo/jogo.css">
+</head>
+<body>
+  <h1>Rumo ao nível 20 Rick</h1>
+
+  <div id="gameArea">
+    <img id="player" src="imagem/download (2).png" alt="Spider-Man">
+
+    <!-- Obstáculos -->
+    <div class="obstacle bottom" style="left: 300px;" data-level="5">5</div>
+    <div class="obstacle top" style="left: 500px;" data-level="10">10</div>
+    <div class="obstacle bottom" style="left: 700px;" data-level="15">15</div>
+    <div class="obstacle top" style="left: 1000px;" data-level="18">18</div>
+
+    <!-- Final -->
+    <div class="final" style="left: 1250px;">🎂</div>
+  </div>
+
+  <!-- Mensagem de nível -->
+  <div id="levelMessage" class="hidden"></div>
+
+  <!-- Minigame: quebra-cabeça final -->
+  <div id="puzzleBox" class="hidden">
+    <h2>Monte o número 20 para desbloquear sua mensagem de parabéns!</h2>
+    <div id="puzzleArea">
+      <div class="drop-zone" data-number="2"></div>
+      <div class="drop-zone" data-number="0"></div>
+    </div>
+    <div id="pieces">
+      <div class="piece" draggable="true" data-number="2">2</div>
+      <div class="piece" draggable="true" data-number="0">0</div>
+    </div>
+  </div>
+
+  
+   <!-- Mensagem final -->
+<!-- Mensagem final -->
+<div id="message" class="hidden">
+  🎉 Parabéns, você chegou ao nível 20! 🎉
+  <br><br>
+  <a href="surpresa.html">
+    <button id="giftButton">🎁 Clique aqui para sua surpresa</button>
+  </a>
+</div>
+
+  
+
+
+
+  <script src="estiloo/script.js"></script>
+</body>
+</html>
+
