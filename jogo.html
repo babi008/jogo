@@ -12,14 +12,19 @@
   <div id="gameArea">
     <img id="player" src="imagem/download (2).png" alt="Spider-Man">
 
-    <!-- Obstáculos -->
     <div class="obstacle bottom" style="left: 300px;" data-level="5">5</div>
     <div class="obstacle top" style="left: 500px;" data-level="10">10</div>
     <div class="obstacle bottom" style="left: 700px;" data-level="15">15</div>
     <div class="obstacle top" style="left: 1000px;" data-level="18">18</div>
 
-    <!-- Final -->
     <div class="final" style="left: 1250px;">🎂</div>
+  </div>
+
+  <!-- Controles Mobile -->
+  <div id="mobileControls">
+    <button onclick="moveDown()">🔽</button>
+    <button onclick="moveUp()">🔼</button>
+    <button onmousedown="startMovingRight()" onmouseup="stopMovingRight()">➡️</button>
   </div>
 
   <!-- Mensagem de nível -->
@@ -38,17 +43,14 @@
     </div>
   </div>
 
-  
-   <!-- Mensagem final -->
-<!-- Mensagem final -->
-<div id="message" class="hidden">
-  🎉 Parabéns, você chegou ao nível 20! 🎉
-  <br><br>
-  <a href="surpresa.html">
-    <button id="giftButton">🎁 Clique aqui para sua surpresa</button>
-  </a>
-</div>
-
+  <!-- Mensagem final -->
+  <div id="message" class="hidden">
+    🎉 Parabéns, você chegou ao nível 20! 🎉
+    <br><br>
+    <a href="surpresa.html">
+      <button id="giftButton">🎁 Clique aqui para sua surpresa</button>
+    </a>
+  </div>
   
 
 
