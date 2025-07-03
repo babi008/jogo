@@ -193,3 +193,12 @@ const player = document.getElementById("player");
       clearInterval(window.mobileMoveInterval);
       window.mobileMoveInterval = null;
     }
+    const btnRight = document.querySelector('#mobileControls button:nth-child(3)');
+
+    btnRight.addEventListener("touchstart", () => {
+      startMovingRight();
+    });
+
+    btnRight.addEventListener("touchend", () => {
+      stopMovingRight();
+    });
