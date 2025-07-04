@@ -48,8 +48,12 @@ const player = document.getElementById("player");
       if (keys.ArrowRight) {
         position += 2;
         player.style.left = position + "px";
-      }
 
+        const gameArea = document.getElementById("gameArea");
+        gameArea.scrollLeft = position - 100; //
+
+      }
+      
       obstacles.forEach(obstacle => {
         const obsLeft = parseInt(obstacle.style.left);
         const obsLevel = obstacle.dataset.level;
