@@ -93,50 +93,85 @@ h1 {
 }
 
 #puzzleBox {
-  margin-top: 30px;
+  margin-top: 40px;
+  padding: 20px;
+  background: #263238;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#puzzleBox h2 {
+  color: #00e5ff;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
 #puzzleArea {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  margin-bottom: 20px;
 }
 
 .drop-zone {
-  width: 60px;
-  height: 80px;
-  border: 2px dashed #555;
-  margin: 0 10px;
-  font-size: 48px;
+  width: 70px;
+  height: 70px;
+  border: 3px dashed #00acc1;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 42px;
   font-weight: bold;
-  color: #0097a7;
+  color: #00bcd4;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  transition: background-color 0.3s;
 }
 
 .drop-zone.filled {
+  background-color: #00acc1;
+  color: white;
   border-style: solid;
-  background-color: #b2dfdb;
 }
 
 #pieces {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
 }
 
 .piece {
-  font-size: 48px;
+  font-size: 42px;
   font-weight: bold;
-  background-color: #00796b;
+  background-color: #00838f;
   color: white;
-  padding: 10px 20px;
-  border-radius: 12px;
+  padding: 14px 22px;
+  border-radius: 14px;
   cursor: grab;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
 }
 
+.piece:active {
+  transform: scale(1.1);
+}
+@keyframes pulse-border {
+  0% {
+    border-color: #00acc1;
+  }
+  50% {
+    border-color: #26c6da;
+  }
+  100% {
+    border-color: #00acc1;
+  }
+}
+
+.drop-zone {
+  animation: pulse-border 2s infinite;
+}
 #giftButton {
   background-color: #00838f;
   color: white;
@@ -210,5 +245,36 @@ h1 {
   }
   100% {
     transform: translateY(100vh) rotate(360deg);
+  }
+}
+.piece {
+  touch-action: none;
+}
+@media (max-width: 768px) {
+  #gameArea {
+    width: 100%;
+    height: 220px;
+    border-radius: 8px;
+  }
+
+  #mobileControls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #mobileControls button {
+    font-size: 20px;
+    padding: 12px 18px;
+  }
+
+  .piece {
+    font-size: 32px;
+    padding: 10px 18px;
+  }
+
+  .drop-zone {
+    width: 60px;
+    height: 60px;
+    font-size: 36px;
   }
 }

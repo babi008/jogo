@@ -118,6 +118,53 @@ const player = document.getElementById("player");
         }
       });
     });
+    // Suporte ao quebra-cabeça no celular (arrastar e soltar com o dedo)
+pieces.forEach(piece => {
+  piece.addEventListener("touchstart", (e) => {
+    const touch = e.touches[0];
+    piece.style.position = "absolute";
+    piece.style.zIndex = "1000";
+
+    const move = (eMove) => {
+      const moveTouch = eMove.touches[0];
+      piece.style.left = moveTouch.pageX - 30 + "px";
+      piece.style.top = moveTouch.pageY - 30 + "px";
+    };
+
+    const drop = () => {
+      document.removeEventListener("touchmove", move);
+      document.removeEventListener("touchend", drop);
+
+      // Verifica se a peça está sobre alguma zona de drop
+      dropZones.forEach(zone => {
+        const rect = zone.getBoundingClientRect();
+        const pieceRect = piece.getBoundingClientRect();
+
+        const overlap = !(
+          pieceRect.right < rect.left ||
+          pieceRect.left > rect.right ||
+          pieceRect.bottom < rect.top ||
+          pieceRect.top > rect.bottom
+        );
+
+        if (overlap && zone.dataset.number === piece.dataset.number) {
+          zone.textContent = piece.dataset.number;
+          zone.classList.add("filled");
+          piece.remove();
+          completedPieces++;
+
+          if (completedPieces === 2) {
+            showCongratulations();
+          }
+        }
+      });
+    };
+
+    document.addEventListener("touchmove", move);
+    document.addEventListener("touchend", drop);
+  });
+});
+
 
     function showCongratulations() {
       document.getElementById("puzzleBox").classList.add("hidden");

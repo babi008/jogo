@@ -185,11 +185,41 @@
     font-size: 15px;
   }
 }
+#backButton {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #00bcd4;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
+#backButton:hover {
+  background-color: #0097a7;
+  transform: scale(1.05);
+}
+
+#backButton:active {
+  background-color: #006064;
+  transform: scale(0.97);
+}
 
   </style>
 </head>
 <body>
+  <a href="jogo.html">
+    <button id="backButton" onclick="goBackToGame()">🔙 Voltar ao Jogo</button>
+  </a>
+  
+
+
 
   <h1> Feliz vida, meu gatinho🎁</h1>
 
@@ -276,7 +306,7 @@
     function showLetter() {
       document.getElementById('letter').classList.add('visible');
     }
-    
+
   </script>
 
 </body>
